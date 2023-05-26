@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='icons/logo-preciso.png')}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MonitorPreciso</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="randombg()">
+  <!-- Ventana de loader -->
+  <div class="hidden-loader" id="hidden-loader">
+    <img src="{{url_for('static', filename='img/gif-loader2.gif')}}" alt="">
+  </div>
+  <!-- Ventana de loader -->
+  <div class="container">
+    <div class="left">
+      <h1 class="animation a1 title">PRECISOGPS</h1>
+      <img src="{{url_for('static', filename='icons/logo-preciso.png')}}" class="animation a6"
+        style="margin: 0 auto 10px;width: 150px">
+      <div class="header">
+        <p class="animation a2"></p>
+      </div>
+      <form id="login-form" class="form">
+        <!-- Message alert -->
+        <div class="alert" id="alert-message-login">
+        </div>
+        <!-- Message alert -->
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input id="usuario" type="text" name="usuario" placeholder="Usuario" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" name="password" id="password-input" placeholder="Contraseña" />
+          <i class="fa fa-eye" id="password-toggle"></i>
+        </div>
+        <div class="div-btn-ingresar">
+          <button class="btn solid btn-ingresar-monitor" id="btn-ingresar-preciso" type="submit" >Ingresar</button>
+        </div>
+      </form>
+    </div>
+    <div id="right"></div>
+  </div>
+  <!-- Javascript file -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="{{url_for('static', filename='js/login.js')}}"></script>
+</body>
+</html>
