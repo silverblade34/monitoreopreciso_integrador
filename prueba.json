@@ -1,0 +1,26 @@
+{
+    "id": 13,
+    "nombre": "RUTAPRUEBA",
+    "codigogps": "5345",
+    "detalles": "parada1-parada3",
+    "paradas": [
+        {
+            "id": 84,
+            "codigogps": "546645",
+            "orden": 1,
+            "nombre": "parada1"
+        },
+        {
+            "id": 85,
+            "codigogps": "65775",
+            "orden": 2,
+            "nombre": "parada2"
+        },
+        {
+            "id": 86,
+            "codigogps": "645645",
+            "orden": 3,
+            "nombre": "parada3"
+        }
+    ]
+}

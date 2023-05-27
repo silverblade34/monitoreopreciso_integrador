@@ -1,0 +1,19 @@
+.container-lista-rutinas{
+    max-height: 600px;
+    overflow-y: auto;
+}
+.parada-rutina-modal.header{
+    background-color: #f97316;
+}
+
+.parada-rutina-modal{
+    padding: 10px 15px;
+    background-color:  #fb923c;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    margin-bottom: 3px;
+}
+

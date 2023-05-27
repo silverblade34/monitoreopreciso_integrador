@@ -1,0 +1,49 @@
+.btn-crear-ruta {
+    height: min-content;
+}
+
+.form-crear-ruta p {
+    text-align: left;
+}
+
+#paradas-container .parada{
+    display: flex;
+}
+
+.parada-input{
+    width: 100%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 5px;
+    padding: 8px;
+}
+.agregar-parada-btn{
+    margin-top: 10px;
+    height: 30px;
+    padding: 8px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}
+
+.form-crear-rutina{
+    text-align: left;
+}
+
+.form-crear-rutina select{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 10px;
+}
+
+.form-crear-rutina input{
+    width: 100%;
+    padding: 10px;
+}
+
+.parada-horas{
+    display: flex;
+    justify-content: space-between;
+}

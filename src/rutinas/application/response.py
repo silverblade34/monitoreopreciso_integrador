@@ -10,10 +10,14 @@ class RutinasResponse:
         #     for ruta in listaRutas:
         #         if rutina["idruta"] == ruta["id"]:
         #             rutinaparse["nameruta"] = ruta["nombre"]
+        rutinasfinal = {}
         rutinasPreciso = self.consumirRutinasPreciso()
-        return rutinasPreciso
-            
-            
+        for rutina in rutinasPreciso["data"]:
+            ruta = rutina["ruta"]
+            if ruta not in rutinasfinal:
+                rutinasfinal[ruta] = []
+            rutinasfinal[ruta].append(rutina)
+        return rutinasfinal    
     
     def consumirRutinasDatabase(self):
         resp = requests.get("http://localhost:4000/api/v1/rutinas/listar")

@@ -25,7 +25,9 @@ def dashboard():
 
 @app.route('/monitoreo', methods=['GET'])
 def monitoreo():
-    return render_template('monitoreo.html',link="moni")
+    _rutinasCL = RutinasController()
+    datarutinas = _rutinasCL.listarRutinasMonitoreo()
+    return render_template('monitoreo.html',link="moni", datarutinas = datarutinas)
 
 @app.route('/rutas', methods=['GET'])
 def rutas():
@@ -38,6 +40,12 @@ def rutinas():
     _rutinasCL = RutinasController()
     datarutinas = _rutinasCL.listarRutinas()
     return render_template('rutinas.html',datarutinas = datarutinas["data"],  link="rutinas")
+
+@app.route('/reportes', methods=['GET'])
+def reportes():
+    _dashCL = DashboardController()
+    datarutas = _dashCL.listarClasesTarjetas()
+    return render_template('reportes.html',  link="reportes", datarutas=datarutas)
 
 def pagina_no_encontrada(error):
     return render_template('404.html')

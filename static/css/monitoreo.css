@@ -1,43 +1,67 @@
-.contenedor-principal{
+.contenedor-principal {
     width: 100% !important;
 }
 
-table tr, td, th{
+table tr,
+td,
+th {
     font-size: 12px;
     padding: 5px;
-    border: 1px solid white;
+    border: 1px solid rgb(141, 141, 141);
     color: white;
     font-weight: lighter;
 }
-table th{
+
+.table-extremos th {
     background-color: brown;
 }
-table .th-distint{
+
+table .th-distint {
     border-bottom: 1px solid transparent;
 }
 
-table .th-distint2{
+table .th-distint2 {
     border-top: 1px solid transparent;
 }
 
-table td{
+table td {
     text-align: center;
 }
 
-.text-invisible{
+.text-invisible {
     color: transparent;
     border-top: 1px solid transparent;
 }
 
 .tablas-container {
-    display: grid;
-    grid-template-columns: 5% 80% 5%;
-    max-width: 100%;
+    overflow: hidden;
   }
-
   
-  .paradas-container{
+.tablas-container .paradas-container {
     width: 100%;
     overflow-x: auto;
+}
+
+.table-wrapper {
+    overflow-x: scroll;
+    cursor: grab;
+    cursor: -webkit-grab;
+    white-space: nowrap;
+  }
+.tablas-container .paradas-container th{
+    background-color: rgb(173, 79, 79);
+}
+
+/* Configuracion para mostrar solo la tabla que se desea */
+
+.ruta-tabla {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .show {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 8fr) minmax(0, 1fr);
+    visibility: visible;
   }
   

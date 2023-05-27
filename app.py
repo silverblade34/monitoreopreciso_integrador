@@ -14,7 +14,9 @@ CORS(app)
 
 # Importar los módulos de rutas después de la inicialización de Flask-Session y la configuración de CORS
 import routes.credential_route
+import routes.rutas_route
 import routes.dashboard_route
+import routes.reportes_route
 
 # Importar la función de manejo de errores 404 de la ruta de páginas
 from routes.paginas_route import pagina_no_encontrada

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block head %}
+{{ super() }}
+<!-- Incluir DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reportes.css') }}">
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+<!-- Incluir DataTables JavaScript -->
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+{% endblock %}
+{% block body %}
+<main class="h-full pb-16 overflow-y-auto">
+    <div id="loader">
+        <div class="loader-content">
+            <p>Cargando...</p>
+            <!-- Agrega aquí tu contenido de loader personalizado, como una animación o un icono -->
+            <div class="lds-dual-ring"></div>
+        </div>
+    </div>
+    <div class="grid px-6 w-full p-10">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Reporte de rutinas
+        </h2>
+        <form id="consulta-form" class="w-full bg-gray-800 text-white border border-gray-700 p-6 rounded-lg">
+            <div class="flex flex-wrap gap-4 items-center">
+                <div class="w-full md:w-auto">
+                    <p class="text-gray-300">Ruta:</p>
+                    <select id="ruta-select" class="w-full bg-gray-700 text-white rounded-lg px-3 py-2">
+                        <option value="">Seleccione una ruta</option>
+                        {% for ruta in datarutas %}
+                        <option value="{{ruta.nombre}}">{{ruta.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="w-full md:w-auto">
+                    <p class="text-gray-300">Fecha inicio:</p>
+                    <input id="fecha-inicio-input" type="date" name="fecha-inicio"
+                        class="w-full bg-gray-700 text-white rounded-lg px-3 py-2">
+                </div>
+                <div class="w-full md:w-auto">
+                    <p class="text-gray-300">Fecha fin:</p>
+                    <input id="fecha-fin-input" type="date" class="w-full bg-gray-700 text-white rounded-lg px-3 py-2">
+                </div>
+                <div class="w-full md:w-auto mt-3">
+                    <button id="buscar-btn" type="submit" name="fecha-fin"
+                        class="button bg-amber-500 p-4 rounded-lg">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <div class="container-tabla-reportes bg-white border border-gray-700 p-6 rounded-lg mt-5">
+            <table id="tabla-rutas">
+                <thead>
+                    <tr>
+                        <th>fecha</th>
+                        <th>placa</th>
+                        <th>ruta</th>
+                        <th>rutina</th>
+                        <th>adelantadostotal</th>
+                        <th>atrasadostotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+<script src="{{ url_for('static', filename='js/reportes.js') }}" defer></script>
+{% endblock %}

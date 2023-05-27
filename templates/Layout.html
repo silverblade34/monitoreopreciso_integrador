@@ -14,10 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
-      
-    <script src="https://code.jquery.com/jquery-3.7.0.js"
-        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     {% block head %}{% endblock %}
 </head>
 
@@ -90,6 +87,21 @@
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M20 2H10a2 2 0 0 0-2 2v2h8a2 2 0 0 1 2 2v8h2a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path><path d="M4 22h10c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2zm2-10h6v2H6v-2zm0 4h6v2H6v-2z"></path>                            </svg>
                             <span class="ml-4">Rutinas</span>
+                        </a>
+                    </li>
+
+                    
+                    <li class="relative px-6 py-3">
+                        {% if link == "reportes" %}
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        {% endif %}
+                        <a class="inline-flex items-center w-full text-sm font-semibold  {% if link == 'reportes' %} text-white {% endif %}  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="/reportes">
+                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="m20 8-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM9 19H7v-9h2v9zm4 0h-2v-6h2v6zm4 0h-2v-3h2v3zM14 9h-1V4l5 5h-4z"></path></svg>
+                            <span class="ml-4">Reportes</span>
                         </a>
                     </li>
                 </ul>
@@ -184,6 +196,7 @@
             <!-- CONTENIDO PRINCIPAL-->
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10" defer></script>
 </body>
 
 </html>
