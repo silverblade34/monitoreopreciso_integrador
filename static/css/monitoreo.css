@@ -1,0 +1,43 @@
+.contenedor-principal{
+    width: 100% !important;
+}
+
+table tr, td, th{
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid white;
+    color: white;
+    font-weight: lighter;
+}
+table th{
+    background-color: brown;
+}
+table .th-distint{
+    border-bottom: 1px solid transparent;
+}
+
+table .th-distint2{
+    border-top: 1px solid transparent;
+}
+
+table td{
+    text-align: center;
+}
+
+.text-invisible{
+    color: transparent;
+    border-top: 1px solid transparent;
+}
+
+.tablas-container {
+    display: grid;
+    grid-template-columns: 5% 80% 5%;
+    max-width: 100%;
+  }
+
+  
+  .paradas-container{
+    width: 100%;
+    overflow-x: auto;
+  }
+  

@@ -52,7 +52,7 @@ function login(event) {
         console.log(token)
         // Guardar el token en sessionStorage
         sessionStorage.setItem('token', data.token);
-        window.location.href = "/prueba";
+        window.location.href = "/dashboard";
 
         // Redirigir al usuario a la vista del dashboard en Flask
       } else {
